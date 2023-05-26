@@ -1,4 +1,7 @@
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import type {
+  Image as LiveImage,
+  HTML,
+} from "deco-sites/std/components/types.ts";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 
 export interface CardProps {
@@ -17,7 +20,7 @@ export interface CardContent {
   /** @description card section background */
   sectionBackground: string;
   /** @description text card */
-  text: string;
+  text: HTML;
   /** @description text cta */
   cta: string;
   /** @description card content background */
@@ -32,9 +35,11 @@ function Card(props: CardProps) {
   return (
     <section
       class="px-8 h-screen md:flex md:p-0"
-      style={props.card.sectionBackground
-        ? { backgroundColor: `${props.card.sectionBackground}` }
-        : undefined}
+      style={
+        props.card.sectionBackground
+          ? { backgroundColor: `${props.card.sectionBackground}` }
+          : undefined
+      }
     >
       <div>
         <p class="text-sm text-color-card mt-4">{props.card.text}</p>

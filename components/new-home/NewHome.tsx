@@ -52,8 +52,8 @@ function NewHome(props: Props) {
     <section>
       <Header {...props.headerProps} />
       <TopBanner {...props.topBanner} />
-      <div id={id} class="relative md:hidden">
-        <Slider class="carousel carousel-center w-full col-span-full row-span-full scrollbar-none gap-6">
+      <div id={id} class="relative">
+        <Slider class="carousel carousel-center w-full col-span-full row-span-full scrollbar-none gap-6 md:hidden">
           {props?.cardProps?.map((card: CardProps, index) => (
             <Slider.Item index={index} class="carousel-item w-full">
               <Card {...card} />
