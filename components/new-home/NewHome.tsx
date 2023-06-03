@@ -77,7 +77,7 @@ function NewHome(props: Props) {
           <div
             class="carousel-item w-full flex justify-center"
             style={card?.card.sectionBackground
-              ? { backgroundColor: `${card?.card.sectionBackground}` }
+              ? { background: `${card?.card.sectionBackground}` }
               : undefined}
           >
             <Card {...card} />

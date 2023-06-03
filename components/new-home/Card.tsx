@@ -1,6 +1,6 @@
 import type {
-  Image as LiveImage,
   HTML,
+  Image as LiveImage,
 } from "deco-sites/std/components/types.ts";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 export interface CardProps {
@@ -24,22 +24,20 @@ export interface CardContent {
   overlayColor?: string;
   /** @description Overlay css */
   cta: string;
-  /** @description card content background */
-  backgroundColorContent: string;
   /** @description image orientation desktop */
   left?: boolean;
   /** @description Content alignment */
 }
 
 function Card(props: CardProps) {
-  console.log("🚀 ~ file: Card.tsx:33 ~ Card ~ props:", props.card.left);
-
   const alignTextToLeft = props.card.left
     ? "flex-col lg:flex-row"
     : "flex-col-reverse lg:flex-row-reverse";
 
   return (
-    <section class={`flex ${alignTextToLeft} md:max-w-[1170px] py-4  md:py-20`}>
+    <section
+      class={`flex ${alignTextToLeft} md:max-w-[1170px] py-4  md:py-20`}
+    >
       <div class="flex flex-col h-auto text-left text-sm text-color-card p-6 lg:p-16 relative z-50">
         {props.card?.overlayColor && (
           <div
@@ -47,7 +45,7 @@ function Card(props: CardProps) {
               props.card.left ? "lg:left-0" : "lg:right-0"
             } top-0 z-0`}
             style={{
-              backgroundColor: props.card?.overlayColor,
+              background: props.card?.overlayColor,
             }}
           />
         )}
