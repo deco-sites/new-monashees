@@ -7561,7 +7561,7 @@
       "required": [],
       "title": "OptionalColors"
     },
-    "ZGVjby1zaXRlcy9uZXctbW9uYXNoZWVzL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@981cc4baf9bcc428ce043b677abfc68d&Colors": {
+    "ZGVjby1zaXRlcy9uZXctbW9uYXNoZWVzL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors&d4b83a40500bb3374d01f5c541343acb": {
       "allOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9uZXctbW9uYXNoZWVzL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors"
@@ -7577,7 +7577,7 @@
           "required": []
         }
       ],
-      "title": "981cc4baf9bcc428ce043b677abfc68d&Colors"
+      "title": "Colors&d4b83a40500bb3374d01f5c541343acb"
     },
     "ZGVjby1zaXRlcy9uZXctbW9uYXNoZWVzL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Miscellaneous": {
       "type": "object",
@@ -7680,7 +7680,7 @@
       "type": "object",
       "properties": {
         "colors": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9uZXctbW9uYXNoZWVzL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@981cc4baf9bcc428ce043b677abfc68d&Colors",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9uZXctbW9uYXNoZWVzL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors&d4b83a40500bb3374d01f5c541343acb",
           "title": "Colors"
         },
         "miscellaneous": {
@@ -8477,9 +8477,17 @@
           "description": "text card",
           "title": "Text"
         },
+        "overlayColor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "text cta",
+          "title": "Overlay Color"
+        },
         "cta": {
           "type": "string",
-          "description": "text cta",
+          "description": "Overlay css",
           "title": "Cta"
         },
         "backgroundColorContent": {
@@ -8494,14 +8502,6 @@
           ],
           "description": "image orientation desktop",
           "title": "Left"
-        },
-        "top": {
-          "type": [
-            "boolean",
-            "null"
-          ],
-          "description": "image orientation mobile",
-          "title": "Top"
         }
       },
       "required": [
@@ -9332,7 +9332,7 @@
       ],
       "title": "WorkflowRef"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@142fbddade88bf9fad57aa7ece64475d|WorkflowRef": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef|d066672075211fe27d122fbfbeae0150": {
       "anyOf": [
         {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef"
@@ -9350,13 +9350,13 @@
           ]
         }
       ],
-      "title": "142fbddade88bf9fad57aa7ece64475d|WorkflowRef"
+      "title": "WorkflowRef|d066672075211fe27d122fbfbeae0150"
     },
     "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@Props": {
       "type": "object",
       "properties": {
         "workflow": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@142fbddade88bf9fad57aa7ece64475d|WorkflowRef",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef|d066672075211fe27d122fbfbeae0150",
           "title": "Workflow"
         },
         "id": {

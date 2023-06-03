@@ -48,6 +48,7 @@ function Dots({ cardProps }: { cardProps: CardProps[] }) {
 
 function NewHome(props: Props) {
   const id = useId();
+
   return (
     <section>
       <Header {...props.headerProps} />
@@ -55,19 +56,30 @@ function NewHome(props: Props) {
       <div id={id} class="relative">
         <Slider class="carousel carousel-center w-full col-span-full row-span-full scrollbar-none gap-6 md:hidden">
           {props?.cardProps?.map((card: CardProps, index) => (
-            <Slider.Item index={index} class="carousel-item w-full">
+            <Slider.Item
+              index={index}
+              class="carousel-item w-full flex justify-center"
+              style={card?.card.sectionBackground
+                ? { backgroundColor: `${card?.card.sectionBackground}` }
+                : undefined}
+            >
               <Card {...card} />
             </Slider.Item>
           ))}
         </Slider>
         <div class="md:hidden">
-        <Dots cardProps={props.cardProps} />
+          <Dots cardProps={props.cardProps} />
         </div>
         <SliderJS rootId={id} infinite />
       </div>
       <div class="max-md:hidden">
         {props?.cardProps?.map((card: CardProps) => (
-          <div class="carousel-item w-full">
+          <div
+            class="carousel-item w-full flex justify-center"
+            style={card?.card.sectionBackground
+              ? { backgroundColor: `${card?.card.sectionBackground}` }
+              : undefined}
+          >
             <Card {...card} />
           </div>
         ))}
