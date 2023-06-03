@@ -38,7 +38,7 @@ function Card(props: CardProps) {
     <section
       class={`flex ${alignTextToLeft} md:max-w-[1170px] py-4  md:py-20`}
     >
-      <div class="flex flex-col h-auto text-left text-sm text-color-card p-6 lg:p-16 relative z-50">
+      <div class="flex flex-col h-auto text-left text-sm text-color-card p-6 lg:p-16 relative z-50 lg:justify-center">
         {props.card?.overlayColor && (
           <div
             class={`hidden md:flex absolute w-[125%] h-full ${

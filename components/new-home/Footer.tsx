@@ -23,7 +23,9 @@ function Footer(props: FooterProps) {
         </div>
         <div class="lg:pt-12 lg:pl-12 lg:flex lg:flex-col">
           <span class="text-sm lg:text-lg">{props.subtitle}</span>
-          <strong class="text-sm mt-5 lg:text-[27px] lg:mt-8">{props.description}</strong>
+          <strong class="text-sm mt-5 lg:text-[27px] lg:mt-8">
+            {props.description}
+          </strong>
         </div>
       </div>
       <div class="m-5 flex justify-end">
