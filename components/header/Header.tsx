@@ -1,74 +1,32 @@
 import Modals from "$store/islands/HeaderModals.tsx";
-import type { Image } from "deco-sites/std/components/types.ts";
-import type { EditableProps as SearchbarProps } from "$store/components/search/Searchbar.tsx";
-import type { LoaderReturnType } from "$live/types.ts";
-import type { Product, Suggestion } from "deco-sites/std/commerce/types.ts";
-
-import Alert from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
-import { headerHeight } from "./constants.ts";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
-export interface NavItem {
+export interface INavItem {
   label: string;
   href: string;
-  children?: Array<{
-    label: string;
-    href: string;
-    children?: Array<{
-      label: string;
-      href: string;
-    }>;
-  }>;
-  image?: {
-    src?: Image;
-    alt?: string;
-  };
 }
 
-export interface Props {
-  alerts: string[];
-  /** @title Search Bar */
-  searchbar?: SearchbarProps;
-  /**
-   * @title Navigation items
-   * @description Navigation items used both on mobile and desktop menus
-   */
-  navItems?: NavItem[];
-
-  /**
-   * @title Product suggestions
-   * @description Product suggestions displayed on search
-   */
-  products?: LoaderReturnType<Product[] | null>;
-
-  /**
-   * @title Enable Top Search terms
-   */
-  suggestions?: LoaderReturnType<Suggestion | null>;
+export interface ILogo {
+  /** @description Logo */
+  src: LiveImage;
+  alt?: string;
 }
 
-function Header(
-  {
-    alerts,
-    searchbar: _searchbar,
-    products,
-    navItems = [],
-    suggestions,
-  }: Props,
-) {
-  const searchbar = { ..._searchbar, products, suggestions };
+export interface HeaderProps {
+  navItems?: INavItem[];
+  logo: ILogo;
+}
+
+function Header({ navItems = [], logo }: HeaderProps) {
   return (
     <>
-      <header style={{ height: headerHeight }}>
-        <div class="bg-base-100 fixed w-full z-50">
-          <Alert alerts={alerts} />
-          <Navbar items={navItems} searchbar={searchbar} />
+      <header>
+        <div class=" md:flex md:justify-center">
+          <Navbar logo={logo} />
         </div>
 
-        <Modals
-          menu={{ items: navItems }}
-          searchbar={searchbar}
-        />
+        <Modals menu={{ items: navItems }} />
       </header>
     </>
   );
